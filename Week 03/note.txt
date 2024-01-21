@@ -1,0 +1,9 @@
+4 types of request 
+    i->   Get
+    ii->  Post
+    iii-> Update
+    iv->  delete
+
+ei 4 ta jinish ke eke sathe 'CRUD' operation bole
+
+ORM - object rational management -> code korbo python a convert hoye jabe database language a 
