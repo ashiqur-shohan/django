@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is home page</h1>
+    <p>Join Filter</p>
+    {{ lst | join:" - " }}
+
+    <p>cap Filter</p>
+    <p>{{lst | capfirst}}</p>
+
+    <p>date time</p>
+    {{ birthday | date:"D d M Y" }}
+
+    <p>Add Filter</p>
+    {{ num | add:"5" }}
+
+    <p>capfirst time</p>
+    {{ test | capfirst }}
+
+    <p>cut first</p>
+    {{ string | cut:" " }}
+    <p>First Filter</p>
+    {{ lst | first }}
+</body>
+</html>
