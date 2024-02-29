@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="d-flex flex-wrap justify-content-center">
+  {% for i in data %}
+
+    <div class="card m-2 p-2" style="width: 18rem;" >
+      <h5 class="card-title text-center mt-1">{{i.taskTitle}}</h5>
+      <p class="card-text">{{i.taskDescription}}</p>
+      <p>Category : 
+        {% for j in i.category.all %}
+        <button class="btn btn-primary btn-sm m-2">
+        {{j.name}}
+      </button>
+        {% endfor %}
+      </p>
+      <p class="card-text">
+        <small class="text-body-secondary"> {{i.Task_assign_date}} </small>
+      </p>
+      {% if i.is_completed == False %}
+      <div class = 'text-center'>
+        <a href="{% url 'edit_task' i.id %}" class="btn btn-warning">Edit</a>
+        <a href="" class="btn btn-danger">Delete</a>
+      </div>
+      {% else %}
+      <button type="button" class="btn btn-success">Completed</button>
+      {% endif %}
+    </div>
+      {% endfor %}
+    </div>
+
+    {% endblock content %}
+  </div>
+</div>
