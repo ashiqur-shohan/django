@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content%}
+
+<div class=''>
+
+    <div class=''>
+      <h2> <b> Drive Off in Style with </b> </h2>
+      <p>
+        Whether you're looking for a fuel-efficient commuter car, a spacious SUV for the family, or a luxurious sedan, we have something for everyone.Our user-friendly website makes it easy to browse our inventory, compare features, and find the perfect car for your needs and budget.
+      </p>
+    </div>
+
+    <div class=''>
+      <img src="" />
+    </div>
+
+</div>
+
+
+<h5>All Categories</h5>
+<div class="d-flex justify-content-center space-between box-sizing">
+      {% for br in brand %}
+      <div class="ms-2">
+          <h3>
+            <a href='{% url 'brand_wise_post' br.slug%}' class = 'text-dark text-decoration-none'> {{br.name}} </a>
+          </h3>
+      </div>
+      {% endfor %}
+    </div>
+
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <h3> {{data | length}} results found  </h3>
+      {% for item in data %}
+      <div class="col">
+        <div class="card h-100">
+          <img src="{{item.image.url}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+               {{item.name}}
+            </h5>
+            <b> Price : {{item.price}} </b>
+            <b> Brand : {{item.brand.name}} </b>
+            <a href="{% url 'car_detail' item.id %}" class="btn btn-primary">View Details</a>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+
+{%endblock%}
